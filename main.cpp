@@ -5,6 +5,7 @@
 #include <vector>
 #include <sstream>
 #include <exception>
+#include "RecordManager.h"
 using namespace std;
 
 struct CustomException : public std::exception
@@ -12,20 +13,6 @@ struct CustomException : public std::exception
 	const char * what () const throw ()
     {
     	return "Error occurred!";
-    }
-};
-
-class RecordManager {
-    public:
-    static vector<string> splitRecord(const string record, char delimiter){
-        vector<string> result;
-        stringstream ss (record);
-        string prop;
-
-        while(getline(ss, prop, delimiter)){
-            result.push_back(prop);
-        }
-        return result;
     }
 };
 
