@@ -9,6 +9,8 @@ class Menu {
     public:
         static void getWelcomeMenu();
 
+        static void getLoginMenu();
+
         static void getStudentMenu ();
 
         static void getCourseMenu ();

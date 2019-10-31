@@ -1,14 +1,21 @@
 #include "../headers/Menu.h"
 #include "../headers/Register.h"
+#include "../headers/Login.h"
 
 void Menu::getWelcomeMenu()
 {
-    cout << "=========Course Management System=========" << endl;
+    cout << "=========COURSE MANAGEMENT SYSTEM=========" << endl;
     cout << "Welcome to the course management system" << endl;
     cout << "1. Login" << endl;
     cout << "2. Sign up (Student)" << endl;
     cout << "3. Sign up (Teacher)" << endl;
     cout << "0. Exit" << endl;
+    cout << "What would you like to do: ";
+}
+
+void Menu::getLoginMenu(){
+    cout << "=========LOGIN=========" << endl;
+    cout << "Welcome to the course management system" << endl;
 }
 
 void Menu::getStudentMenu()
@@ -20,6 +27,7 @@ void Menu::getStudentMenu()
     cout << "4. Withdraw from course" << endl;
     cout << "5. View profile" << endl;
     cout << "0. Exit" << endl;
+    cout << "What would you like to do: ";
 }
 
 void Menu::getCourseMenu()
@@ -35,6 +43,7 @@ void Menu::getTeacherMenu()
     cout << "2. Start a new course" << endl;
     cout << "3. View profile" << endl;
     cout << "0. Exit" << endl;
+    cout << "What would you like to do: ";
 }
 
 void Menu::getRegistrationMenu(string role)
