@@ -9,8 +9,9 @@ Student Login::verifyStudent(string id){
 	StudentDAO sd;
 	try{
 		sd.retrieveStudent(id);
-	}catch(...){
-		throw("-1");
+	}catch(const char* e){
+		//throw("-1");
+		cout << e;
 	}
 	return s;
 }

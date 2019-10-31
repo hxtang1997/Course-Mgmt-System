@@ -11,7 +11,7 @@ void TeacherDAO::insertTeacherRecord(Teacher t)
 vector<Teacher> TeacherDAO::retrieveTeacherRecords()
 {
     vector<Teacher> teachers;
-    fstream teacher_records(fileName);
+    ifstream teacher_records(fileName);
 
     string record;
 
@@ -63,7 +63,8 @@ void TeacherDAO::updateTeacherRecord(Teacher teacher)
         }
     }
 
-    fstream teacher_records(fileName);
+    ofstream teacher_records;
+    teacher_records.open(fileName);
 
     for (Teacher t : teachers)
     {

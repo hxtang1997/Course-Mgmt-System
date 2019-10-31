@@ -11,7 +11,7 @@ void CourseDAO::insertCourseRecord(Course c)
 vector<Course> CourseDAO::retrieveCourseRecords()
 {
     vector<Course> courses;
-    fstream course_records(fileName);
+    ifstream course_records(fileName);
 
     string record;
 

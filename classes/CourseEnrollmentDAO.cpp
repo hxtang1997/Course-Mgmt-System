@@ -3,7 +3,7 @@
 vector<CourseEnrollment> CourseEnrollmentDAO::retrieveAllEnrollmentRecords()
 {
     vector<CourseEnrollment> enrollments;
-    fstream enrollment_records(fileName);
+    ifstream enrollment_records(fileName);
 
     string record;
 

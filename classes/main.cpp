@@ -32,6 +32,6 @@ int main(int argc, char**argv){
         	run = false;
         }
     }
-    exit(0);
+    exit(0); 
     return 0;
 }

@@ -11,7 +11,7 @@ using namespace std;
 
 class CourseEnrollmentDAO{
     private:
-    string fileName = "course_enrollment.txt";
+    string fileName = "./course_enrollment.txt";
 
     public:
     vector<CourseEnrollment> retrieveAllEnrollmentRecords();

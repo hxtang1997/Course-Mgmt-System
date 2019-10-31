@@ -1,4 +1,6 @@
 #include "../headers/StudentDAO.h"
+#include <iostream>
+using namespace std;
 
 void StudentDAO::insertStudentRecord(Student s)
 {
@@ -11,7 +13,7 @@ void StudentDAO::insertStudentRecord(Student s)
 vector<Student> StudentDAO::retrieveStudentRecords()
 {
     vector<Student> students;
-    fstream student_records(fileName);
+    ifstream student_records(fileName);
 
     string record;
 
@@ -21,7 +23,7 @@ vector<Student> StudentDAO::retrieveStudentRecords()
 
         Student s;
 
-        if (properties.size() == 4)
+        if (properties.size() == 2)
         {
             s.setID(properties.at(0));
             s.setName(properties.at(1));
@@ -37,7 +39,7 @@ Student StudentDAO::retrieveStudent(string id)
     vector<Student> student_records = retrieveStudentRecords();
     for (Student s : student_records)
     {
-        if (s.getID() == id)
+        if (s.getID().compare(id) == 0)
         {
             return s;
         }
@@ -64,7 +66,8 @@ void StudentDAO::updateStudentRecord(Student student)
         }
     }
 
-    fstream student_records(fileName);
+    ofstream student_records;
+    student_records.open(fileName);
 
     for (Student s : students)
     {

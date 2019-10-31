@@ -11,7 +11,7 @@ using namespace std;
 
 class TeacherDAO {
     private:
-    string fileName = "teachers.txt";
+    string fileName = "./teachers.txt";
 
     public:
     void insertTeacherRecord(Teacher t);
