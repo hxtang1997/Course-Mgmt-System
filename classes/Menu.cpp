@@ -33,7 +33,6 @@ void Menu::getStudentMenu()
 void Menu::getCourseMenu()
 {
     cout << "=========COURSE MENU=========" << endl;
-    //loop through course file
 }
 
 void Menu::getTeacherMenu()
@@ -49,6 +48,4 @@ void Menu::getTeacherMenu()
 void Menu::getRegistrationMenu(string role)
 {
     cout << "=========REGISTRATION=========" << endl;
-    Register r;
-    r.Registration(role);
 }

@@ -4,7 +4,7 @@ void TeacherDAO::insertTeacherRecord(Teacher t)
 {
     ofstream records;
     records.open(fileName);
-    records << t.getID() << "," << t.getName() << "," << t.getGender() << "," << t.getPhone() << endl;
+    records << t.getID() << "," << t.getName() << endl;
     records.close();
 }
 
@@ -25,8 +25,6 @@ vector<Teacher> TeacherDAO::retrieveTeacherRecords()
         {
             t.setID(properties.at(0));
             t.setName(properties.at(1));
-            t.setGender(properties.at(2).c_str()[0]);
-            t.setPhone(stoi(properties.at(3)));
             teachers.push_back(t);
         }
     }
@@ -59,16 +57,6 @@ void TeacherDAO::updateTeacherRecord(Teacher teacher)
             if (t.getName() != teacher.getName())
             {
                 t.setName(teacher.getName());
-            }
-
-            if (t.getGender() != teacher.getGender())
-            {
-                t.setGender(teacher.getGender());
-            }
-
-            if (t.getPhone() != teacher.getPhone())
-            {
-                t.setPhone(teacher.getPhone());
             }
             teachers.at(i) = t;
             break;

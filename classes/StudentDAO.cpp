@@ -4,7 +4,7 @@ void StudentDAO::insertStudentRecord(Student s)
 {
     ofstream records;
     records.open(fileName);
-    records << s.getID() << "," << s.getName() << "," << s.getGender() << "," << s.getPhone() << endl;
+    records << s.getID() << "," << s.getName() << endl;
     records.close();
 }
 
@@ -25,8 +25,6 @@ vector<Student> StudentDAO::retrieveStudentRecords()
         {
             s.setID(properties.at(0));
             s.setName(properties.at(1));
-            s.setGender(properties.at(2).c_str()[0]);
-            s.setPhone(stoi(properties.at(3)));
             students.push_back(s);
         }
     }
@@ -61,15 +59,6 @@ void StudentDAO::updateStudentRecord(Student student)
                 s.setName(student.getName());
             }
 
-            if (s.getGender() != student.getGender())
-            {
-                s.setGender(student.getGender());
-            }
-
-            if (s.getPhone() != student.getPhone())
-            {
-                s.setPhone(student.getPhone());
-            }
             students.at(i) = s;
             break;
         }
