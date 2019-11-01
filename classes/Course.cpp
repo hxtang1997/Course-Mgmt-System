@@ -8,6 +8,11 @@ Course::Course(string id, string name, string teacher_id) {
     this->teacher_id = teacher_id;
 }
 
+Course::Course(string name, string teacher_id) {
+    course_name = name;
+    this->teacher_id = teacher_id;
+}
+
 string Course::getName() {
     return this->course_name;
 }

@@ -10,8 +10,7 @@ Student Login::verifyStudent(string id){
 	try{
 		sd.retrieveStudent(id);
 	}catch(const char* e){
-		//throw("-1");
-		cout << e;
+		throw("-1");
 	}
 	return s;
 }
@@ -27,17 +26,14 @@ Teacher Login::verifyTeacher(string id){
 	return t;
 }
 
-string Login::login() {
-    cout << "ID: ";
-    string id;
-    cin >> id;
+string Login::login(string id) {
     try{
 	    verifyStudent(id);
-	    return id;
+	    return "s";
     }catch(...){
     	try{
     		verifyTeacher(id);
-    		return id;
+    		return "t";
     	}catch(...){
     		cout << "ID does not exist. Please sign up." << endl;
 	    	return "-1";

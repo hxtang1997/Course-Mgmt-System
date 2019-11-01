@@ -9,7 +9,7 @@ void Menu::getWelcomeMenu()
     cout << "1. Login" << endl;
     cout << "2. Sign up (Student)" << endl;
     cout << "3. Sign up (Teacher)" << endl;
-    cout << "0. Exit" << endl;
+    cout << "0. Quit" << endl;
     cout << "What would you like to do: ";
 }
 
@@ -26,7 +26,7 @@ void Menu::getStudentMenu()
     cout << "3. View enrolled course" << endl;
     cout << "4. Withdraw from course" << endl;
     cout << "5. View profile" << endl;
-    cout << "0. Exit" << endl;
+    cout << "0. Logout" << endl;
     cout << "What would you like to do: ";
 }
 
@@ -39,9 +39,9 @@ void Menu::getTeacherMenu()
 {
     cout << "=========TEACHER MENU=========" << endl;
     cout << "1. View courses I teach" << endl;
-    cout << "2. Start a new course" << endl;
+    cout << "2. Teach new course" << endl;
     cout << "3. View profile" << endl;
-    cout << "0. Exit" << endl;
+    cout << "0. Logout" << endl;
     cout << "What would you like to do: ";
 }
 

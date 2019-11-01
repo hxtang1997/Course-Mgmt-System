@@ -21,7 +21,7 @@ vector<Teacher> TeacherDAO::retrieveTeacherRecords()
 
         Teacher t;
 
-        if (properties.size() == 4)
+        if (properties.size() == 2)
         {
             t.setID(properties.at(0));
             t.setName(properties.at(1));

@@ -13,17 +13,30 @@ vector<CourseEnrollment> CourseEnrollmentDAO::retrieveAllEnrollmentRecords()
 
         CourseEnrollment e;
 
-        if (properties.size() == 3)
+        if (properties.size() == 2)
         {
-            e.setEnrollmentID(stoi(properties.at(0)));
-            e.setCourseID(properties.at(1));
-            e.setStudentID(properties.at(2));
+            e.setCourseID(properties.at(0));
+            e.setStudentID(properties.at(1));
             enrollments.push_back(e);
         }
     }
     enrollment_records.close();
     return enrollments;
 }
+
+void CourseEnrollmentDAO::insertCourseEnrollmentRecord(CourseEnrollment ce)
+{
+    //vector<CourseEnrollment> vce;
+    //vce = retrieveAllEnrollmentRecords();
+    //int id;
+    //id = vce.size() + 1;
+    //vce.setID(to_string(id));
+    ofstream records;
+    records.open(fileName);
+    records << ce.getCourseID() << "," << ce.getStudentID() << endl;
+    records.close();
+}
+
 
 vector<CourseEnrollment> CourseEnrollmentDAO::retrieveCoursesEnrolledByStudent(string studentID)
 {

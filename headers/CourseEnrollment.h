@@ -6,14 +6,13 @@ using namespace std;
 
 class CourseEnrollment {
     private:
-    int course_enrollment_id;
     string course_id;
     string student_id;
 
     public:
     CourseEnrollment();
 
-    CourseEnrollment(int id, string course, string student);
+    CourseEnrollment(string course, string student);
 
     int getEnrollmentID();
 

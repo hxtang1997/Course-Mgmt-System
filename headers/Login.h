@@ -13,7 +13,7 @@ public:
 
     Teacher verifyTeacher(string id);
 
-    string login();
+    string login(string id);
 };
 
 #endif

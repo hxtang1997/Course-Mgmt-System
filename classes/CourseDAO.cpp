@@ -1,13 +1,5 @@
 #include "../headers/CourseDAO.h"
 
-void CourseDAO::insertCourseRecord(Course c)
-{
-    ofstream records;
-    records.open(fileName);
-    records << c.getID() << "," << c.getName() << endl;
-    records.close();
-}
-
 vector<Course> CourseDAO::retrieveCourseRecords()
 {
     vector<Course> courses;
@@ -21,15 +13,29 @@ vector<Course> CourseDAO::retrieveCourseRecords()
 
         Course c;
 
-        if (properties.size() == 2)
+        if (properties.size() == 3)
         {
             c.setID(properties.at(0));
             c.setName(properties.at(1));
+            c.setTeacher(properties.at(2));
             courses.push_back(c);
         }
     }
     course_records.close();
     return courses;
+}
+
+void CourseDAO::insertCourseRecord(Course c)
+{
+    vector<Course> courses;
+    courses = retrieveCourseRecords();
+    int id;
+    id = courses.size() + 1;
+    c.setID(to_string(id));
+    ofstream records;
+    records.open(fileName);
+    records << to_string(id) << "," << c.getName() << "," << c.getTeacher() << endl;
+    records.close();
 }
 
 Course CourseDAO::retrieveCourse(string id)

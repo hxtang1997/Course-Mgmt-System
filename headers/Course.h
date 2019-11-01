@@ -15,6 +15,8 @@ class Course {
 
     Course(string id, string name, string teacher_id);
 
+    Course(string name, string teacher_id);
+
     string getName();
 
     string getID();

@@ -14,9 +14,9 @@ class CourseDAO {
     string fileName = "./courses.txt";
 
     public:
-    void insertCourseRecord(Course c);
-
     vector<Course> retrieveCourseRecords();
+
+    void insertCourseRecord(Course c);
 
     Course retrieveCourse(string id);
 
