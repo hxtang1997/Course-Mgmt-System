@@ -40,9 +40,17 @@ void Menu::getTeacherMenu()
     cout << "=========TEACHER MENU=========" << endl;
     cout << "1. View courses I teach" << endl;
     cout << "2. Teach new course" << endl;
-    cout << "3. View profile" << endl;
+    cout << "3. Remove course I teach" << endl;
+    cout << "4. View class list of course I teach" << endl;
+    cout << "5. View profile" << endl;
     cout << "0. Logout" << endl;
     cout << "What would you like to do: ";
+}
+
+
+void Menu::getTeacherClassMenu()
+{
+    cout << "=========TEACHER CLASS MENU=========" << endl;
 }
 
 void Menu::getRegistrationMenu(string role)

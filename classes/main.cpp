@@ -136,6 +136,52 @@ int main(int argc, char**argv){
 						    cd.insertCourseRecord(newCourse);
 
 	    				}else if (next2 == "3"){
+	    					//Remove  course teacher teach
+	    					cout << "Remove Course I teach" << endl;
+						    cout << "Course ID: ";
+						    string cid;
+						    cin >> cid;
+						    try{
+						    	Course d;
+								CourseDAO cd;
+								d =  cd.retrieveCourse(cid);
+						    	vector<Course> courses;
+	    						courses = cd.retrieveCoursesByTeacher(uid);
+	    						bool found = false;
+	    						for (Course c : courses){
+		    						if (c.getTeacher() == uid){
+		    							found = true;
+		    						}
+		    					}
+		    					if (!found){
+		    						cout << "You are not teaching this course" << endl;
+		    						continue;
+		    					}else{
+		    						cd.deleteCourseRecord(cid);
+		    					}
+	    					}catch(...){
+	    						cout << "Invalid course id" << endl;
+	    					}
+
+	    				}else if (next2 == "4"){
+	    					//View class list
+	    					vector<Course> courses;
+	    					courses = cd.retrieveCoursesByTeacher(uid);
+	    					cout << "Class List"  << endl;
+	    					for (Course c : courses){
+	    						cout << "Course ID | Course Name " << endl;
+	    						cout << c.getID()  << " " << c.getName() << endl;
+	    						cout << "Student Enrolled (ID,Name): " << endl;
+	    						CourseEnrollmentDAO ced;
+	    						vector<CourseEnrollment> vce = ced.retrieveStudentsEnrolledInCourse(c.getID());
+	    						for (CourseEnrollment ce : vce){
+	    							StudentDAO sd;
+	    							Student s = sd.retrieveStudent(ce.getStudentID());
+	    							cout << s.toString() << endl;
+	    						}
+	    					}
+
+	    				}else if (next2 == "5"){
 	    					TeacherDAO td;
 	    					Teacher t;
 	    					t = td.retrieveTeacher(uid);

@@ -17,6 +17,8 @@ class Menu {
 
         static void getTeacherMenu ();
 
+        static void getTeacherClassMenu ();
+
         static void getRegistrationMenu(string role);
 };
 
