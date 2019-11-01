@@ -4,6 +4,7 @@ To execute the program, run the following commands in terminal:
 - g++ -std=c++11 classes/*.cpp -o coursemgmtsystem
 - ./coursemgmtsystem
 
+# About the System
 Course Management System is a simplied terminal based system that manages student information such as course enrollment. It allows both the teacher and student to keep track of their enrolled courses.
 
 The application is based on the following assumption:
