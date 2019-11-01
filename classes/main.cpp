@@ -75,7 +75,38 @@ int main(int argc, char**argv){
 
 	    				}else if (next2 == "4"){
 	    					//Withdraw  from course
-
+	    					cout << "Withdrawal from Course" << endl;
+						    cout << "Course ID: ";
+						    string cid;
+						    cin >> cid;
+						    try{
+						    	Course c;
+						    	CourseDAO cd;
+						    	c =  cd.retrieveCourse(cid);
+							    CourseEnrollment newCE(cid, uid);
+							    CourseEnrollmentDAO  ceD;
+							    vector<CourseEnrollment> vce;
+							    vce = ceD.retrieveCoursesEnrolledByStudent(uid);
+							    bool found = false;
+							    for (CourseEnrollment e : vce)
+							    {
+							        if (e.getCourseID() == cid)
+							        {
+							            found = true;
+							        }
+							    }
+							    if (!found){
+							    	cout << "You are not enrolled in this course" << endl;
+							    	continue;
+							    }else{
+							    	ceD.deleteCourseEnrollmentRecord(uid, cid);
+							    }
+							    cout << "Successfully withdrawn from " << c.getName() << endl;
+						    }catch(...){
+						    	cout << "Invalid course id" << endl;
+						    	continue;
+						    }
+	    					
 	    				}else if (next2 == "5"){
 	    					StudentDAO sd;
 	    					Student s;

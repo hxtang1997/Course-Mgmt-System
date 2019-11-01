@@ -16,6 +16,8 @@ class CourseEnrollmentDAO{
     public:
     vector<CourseEnrollment> retrieveAllEnrollmentRecords();
 
+    void deleteCourseEnrollmentRecord(string uid, string cid);
+
     void insertCourseEnrollmentRecord(CourseEnrollment ce);
 
     vector<CourseEnrollment> retrieveCoursesEnrolledByStudent(string studentID);

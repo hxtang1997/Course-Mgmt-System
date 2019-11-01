@@ -24,6 +24,27 @@ vector<CourseEnrollment> CourseEnrollmentDAO::retrieveAllEnrollmentRecords()
     return enrollments;
 }
 
+void CourseEnrollmentDAO::deleteCourseEnrollmentRecord(string uid, string cid)
+{
+    vector<CourseEnrollment> vce = retrieveAllEnrollmentRecords();
+
+    string tempFileName = "temp.txt";
+    ofstream temp;
+    temp.open(tempFileName);
+
+    for (CourseEnrollment ce : vce)
+    {
+        if (ce.getCourseID() != cid && ce.getStudentID() != uid)
+        {
+            temp << ce.toString() << endl;
+        }
+    }
+
+    temp.close();
+    remove(fileName.c_str());
+    rename(tempFileName.c_str(), fileName.c_str());
+}
+
 void CourseEnrollmentDAO::insertCourseEnrollmentRecord(CourseEnrollment ce)
 {
     //vector<CourseEnrollment> vce;
