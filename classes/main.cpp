@@ -131,7 +131,8 @@ int main(int argc, char**argv){
 	    				}else if (next2 == "2"){
 	    					cout << "New Course name: ";
 						    string cname;
-						    cin >> cname;
+							cin.ignore();
+						    getline(cin, cname);
 						    Course newCourse(cname, uid);
 						    cd.insertCourseRecord(newCourse);
 

@@ -9,7 +9,8 @@
 void Register::Registration(string role) {
     cout << "Name: ";
     string name;
-    cin >> name;
+	cin.ignore();
+    getline(cin, name);
     string id;
     if(role == "2"){
     	cout << "Student ID: ";
